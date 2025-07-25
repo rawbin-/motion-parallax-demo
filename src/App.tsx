@@ -16,11 +16,23 @@ const whileInView = {
 
 const motionProps = {
     layout:true,
-    initial,
+    initial, // 移动端传空
+    // initial: {},
     whileInView,
+    // whileInView: {}, // 移动端传空
     viewPort:{
         once: true  //去掉这个便于调试
     }
+}
+
+const motionConfig = {
+    // transition: {}  // 移动端传空
+    transition: {
+        duration: 1,
+        delay: 1,
+        ease: 'easeOut'
+    },
+
 }
 
 function App() {
@@ -57,11 +69,7 @@ function App() {
   }
 
   return (
-          <MotionConfig transition={{
-            duration: 1,
-              delay:1,
-            ease: 'easeOut'
-          }}>
+          <MotionConfig {...motionConfig}>
               {
                   getBlocks()
               }
