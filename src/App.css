@@ -40,3 +40,29 @@
 .read-the-docs {
   color: #888;
 }
+
+
+.animated {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    position: relative;
+    opacity: 0; /* 初始透明度为0 */
+    transform: translateY(50px); /* 初始位置从下方50px开始 */
+    animation: slide-up 5s ease-out forwards; /* 动画持续1秒，使用ease-out曲线，动画结束后保持最后一帧的状态 */
+}
+
+@keyframes slide-up {
+    0% {
+        opacity: 0; /* 初始透明度为0 */
+        transform: translateY(50px); /* 初始位置从下方50px开始 */
+    }
+    100% {
+        opacity: 1; /* 最终透明度为1 */
+        transform: translateY(0); /* 回到正常位置 */
+    }
+}
